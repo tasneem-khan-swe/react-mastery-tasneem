@@ -3,7 +3,7 @@ import type { TodoFormProps } from '../types'
 
 export const TodoForm: React.FC<TodoFormProps> = ({ inputRef, onSubmit }) => {
   return (
-    <div className="flex justify-center mt-6">
+    <div className="flex justify-center">
       <form
         onSubmit={onSubmit}
         className="flex items-center gap-3">

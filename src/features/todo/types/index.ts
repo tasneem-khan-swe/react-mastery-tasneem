@@ -5,9 +5,6 @@ export interface TodoItem {
   text: string;
   completed: boolean;
 }
-
-export type FilterType = "all" | "completed" | "pending";
-
 export interface EditTodo {
   id: number | null;
   text: string;
@@ -25,10 +22,6 @@ export interface TodoListProps{
   onCancel: ()=>void;
   onDelete: (id: number)=>void;
   onUpdate: (id: number)=>void;
-}
-export interface FilterProps{
-  currentFilter: FilterType;
-  setFilter: (filter: FilterType) => void;
 }
 export interface ButtonProps{
   label:string;
