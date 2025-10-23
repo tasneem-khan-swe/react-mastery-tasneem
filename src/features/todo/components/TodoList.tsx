@@ -4,8 +4,7 @@ import { CustomButton } from './CustomButton';
 export const TodoList: React.FC<TodoListProps> = ({ todos, editTask, setEditTask, onComplete, onEdit, onCancel, onDelete, onUpdate }) => {
 
   return (
-    <div className="max-w-md mx-auto mt-8">
-      <ul className="space-y-4">
+      <ul className="space-y-4 mt-6">
         {todos?.length > 0 && todos.map((todo: TodoItem) => {
           const { id, text, completed } = todo;
           return (
@@ -23,29 +22,26 @@ export const TodoList: React.FC<TodoListProps> = ({ todos, editTask, setEditTask
                   >
                     {text}
                   </span>
-                  <div className="flex gap-2">
                     <CustomButton className='bg-yellow-400' label='Edit' onClick={() => onEdit(todo)} />
                     <CustomButton className='bg-red-400' label='Delete' onClick={() => onDelete(id)} />
-                  </div>
                 </>
               ) : (
                 <>
                   <input
+                    id="todo-edit-input"
+                    name="todo-edit-input"
                     value={editTask?.text}
                     onChange={(e) => setEditTask({ ...editTask, text: e.target.value })}
                     className="flex-1 border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
-                  <div className="flex gap-2">
+                    <CustomButton className='bg-yellow-400' label='x' onClick={onCancel} />
                     <CustomButton className='bg-blue-400' label='Update' onClick={() => onUpdate(id)} />
-                    <CustomButton className='bg-yellow-400' label='Cancel' onClick={onCancel} />
                     <CustomButton className='bg-red-400' label='Delete' onClick={() => onDelete(id)} />
-                  </div>
                 </>
               )}
             </li>
           );
         })}
       </ul>
-    </div>
   );
 };

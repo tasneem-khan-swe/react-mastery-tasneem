@@ -31,7 +31,7 @@ const fetchResults = async () => {
   }, [debouncedQuery]);
 
   return (
-    <div className="max-w-md mx-auto p-4">
+    <div className="max-w-md mx-auto border border-gray-200 p-4 rounded-md mt-5">
       <h2 className="text-xl font-semibold mb-2">🔍Debounce Search (GitHub Users)</h2>
 
       <SearchInput value={searchQuery} onChange={setSearchQuery} placeholder="Type username..." />

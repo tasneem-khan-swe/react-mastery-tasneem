@@ -3,7 +3,7 @@ import type { CounterStepProps } from "../types";
 const CounterStepInput = ({ step, onStepChange }: CounterStepProps) => {
   return (
     <div className="mt-4 flex items-center justify-between">
-      <label className="text-sm font-medium mb-2 text-gray-600">
+      <label className="text-sm font-medium mb-2">
         Step Value:
       </label>
       <input

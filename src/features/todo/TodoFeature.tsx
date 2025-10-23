@@ -44,7 +44,7 @@ export const TodoFeature: React.FC = () => {
     handleCancelEdit()
   }
   return (
-    <div className="flex flex-col items-center">
+    <div className="max-w-md mx-auto border border-gray-200 py-4 px-5 rounded-md mt-5 flex flex-col items-center">
       <h2 className="text-xl font-semibold mb-2">Todo App</h2>
       {/* Add Todo Form */}
       <TodoForm inputRef={inputRef} onSubmit={handleAddTodo} />
